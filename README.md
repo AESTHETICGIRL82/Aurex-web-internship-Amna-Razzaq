@@ -13,13 +13,14 @@
 | **Blockers** | Faced push conflicts due to remote changes; resolved using `git pull` and understood merging. |
 
 ---
+## week 2-modern UI
+This repository contains my internship portfolio project.  
+In this week, I improved my Week 1 HTML portfolio with modern, responsive CSS styling.
 
-## Week 2 — *(update here next week)*
+## Project Structure
 
-| Section | Details |
-|---|---|
-| **Task** | |
-| **Tech Used** | |
-| **How to Run** | |
-| **Key Learnings** | |
-| **Blockers** | |
+```text
+aurex-web-internship-amna-razzaq/
+├── index.html
+├── style.css
+└── README.md
