@@ -1,3 +1,6 @@
+/* ===============================
+   Root Variables
+   =============================== */
 :root {
   --bg: #f5f7fb;
   --surface: #ffffff;
@@ -27,32 +30,63 @@ body {
   line-height: 1.65;
 }
 
-/* Header + Nav (Flexbox) */
+/* ===============================
+   Header
+   =============================== */
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  z-index: 1200;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 14px 5%;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-soft);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.08);
 }
 
 h1 {
   font-size: clamp(1.4rem, 2.8vw, 2rem);
   color: var(--primary);
   letter-spacing: 0.4px;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
+/* ===============================
+   Desktop Nav (header ke andar, right side)
+   =============================== */
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-left: auto;
+  padding: 0;
 }
 
 nav a {
@@ -71,7 +105,50 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Replaces marquee style */
+/* ===============================
+   Hamburger Button
+   =============================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  z-index: 1300;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+.menu-toggle.open span {
+  background: var(--primary);
+}
+
+/* ===============================
+   Marquee
+   =============================== */
 marquee {
   display: block;
   margin: 18px auto 8px;
@@ -81,23 +158,25 @@ marquee {
   font-size: 1rem;
 }
 
-marquee + p {
+marquee + p,
+.subtitle {
   text-align: center;
   color: var(--muted);
   font-size: 1rem;
   margin-bottom: 18px;
 }
 
-/* Main content */
+/* ===============================
+   Main content
+   =============================== */
 main {
   width: min(1100px, 92%);
   margin: 20px auto 40px;
-  display: grid; /* Grid layout */
+  display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
-/* Section Cards (Box Model) */
 section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -134,7 +213,9 @@ li {
   padding: 10px 12px;
 }
 
-/* Contact form */
+/* ===============================
+   Contact form
+   =============================== */
 form fieldset {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -194,7 +275,9 @@ button:hover {
   opacity: 0.95;
 }
 
-/* Footer */
+/* ===============================
+   Footer
+   =============================== */
 footer {
   text-align: center;
   color: var(--muted);
@@ -202,15 +285,90 @@ footer {
   font-size: 0.92rem;
 }
 
-/* Tablet */
+/* ===============================
+   Tablet & Mobile — fullscreen menu
+   =============================== */
 @media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .profile-pic {
+    width: 48px;
+    height: 48px;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   nav {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100dvh;
+    margin: 0;
+    padding: 90px 0 40px;
+    border-radius: 0;
+    box-shadow: none;
+
+    background: rgba(22, 101, 52, 0.97);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+
+    z-index: 1050;
+  }
+
+  nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  nav a {
+    width: 80%;
+    max-width: 320px;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0;
+    transition: color 0.2s ease, letter-spacing 0.25s ease;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a:hover {
+    background: transparent;
+    color: #86efac;
+    letter-spacing: 1px;
+    transform: none;
+  }
+
+  body.menu-open header {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  body.menu-open h1 {
+    color: #ffffff;
+  }
+
+  body.menu-open .profile-pic {
+    border-color: #ffffff;
   }
 
   main {
@@ -218,18 +376,34 @@ footer {
   }
 }
 
-/* Mobile */
+/* ===============================
+   Mobile
+   =============================== */
 @media (max-width: 600px) {
   section {
     padding: 18px;
   }
 
-  nav a {
-    font-size: 0.88rem;
-    padding: 7px 10px;
-  }
-
   h2 {
     font-size: 1.15rem;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  nav {
+    padding-top: 80px;
+  }
+
+  nav a {
+    font-size: 1.05rem;
+    padding: 16px 0;
   }
 }
