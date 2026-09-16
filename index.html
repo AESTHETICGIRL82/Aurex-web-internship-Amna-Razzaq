@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship practice</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
 </head>
 
 <body>
@@ -24,6 +25,7 @@
         <nav id="main-nav">
             <a href="#about">About Me</a>
             <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
             <a href="#experience">Experience</a>
@@ -34,13 +36,16 @@
     <p class="subtitle">Full Stack Web Developer Intern</p>
 
     <main>
-        <section id="about">
+        <section id="about" tabindex="0">
             <h2>About Me</h2>
             <p>I am a passionate Full Stack Web Developer with experience in building web applications using modern technologies. I enjoy solving complex problems and continuously learning new skills.</p>
         </section>
 
-        <section id="skills">
+        <section id="skills" tabindex="0">
             <h2>Skills</h2>
+            <p class="section-intro">
+    These are the technologies I am currently practicing and improving.
+</p>
             <ul>
                 <li>HTML, CSS, JavaScript</li>
                 <li>React.js, Node.js</li>
@@ -50,13 +55,46 @@
             </ul>
         </section>
 
-        <section id="education">
+          <section id="projects" tabindex="0">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <article class="project-card" tabindex="0">
+            <div class="project-icon">🌐</div>
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio built with HTML5, CSS3 (Flexbox & Grid), showcasing skills and experience.</p>
+        </article>
+        <article class="project-card" tabindex="0">
+            <div class="project-icon">🛒</div>
+            <h3>E-Commerce UI</h3>
+            <p>A modern e-commerce landing page concept with product cards, responsive layout, and clean UI.</p>
+        </article>
+        <article class="project-card" tabindex="0">
+            <div class="project-icon">📋</div>
+            <h3>Task Manager App</h3>
+            <p>A simple task management tool built using React.js and Node.js with full CRUD functionality.</p>
+        </article>
+        <article class="project-card" tabindex="0">
+            <div class="project-icon">🌤️</div>
+            <h3>Weather Dashboard</h3>
+            <p>A weather forecast dashboard consuming a public REST API, built with vanilla JavaScript.</p>
+        </article>
+    </div>
+</section>
+        <section id="education" tabindex="0">
             <h2>Education</h2>
             <p>Bachelor's Degree in Computer Science from XYZ University.</p>
+            <p class="section-intro">
+    My studies help me build a strong foundation in programming,
+    problem-solving, and software development.
+</p>
         </section>
 
-        <section id="contact">
+        <section id="contact" tabindex="0">
             <h2>Contact</h2>
+            <p class="section-intro">
+    Have a project idea or a question? Send me a message and I will be
+    happy to connect.
+</p>
             <form>
                 <fieldset>
                     <legend>Contact Form</legend>
@@ -74,8 +112,12 @@
             </form>
         </section>
 
-        <section id="experience">
+        <section id="experience" tabindex="0">
             <h2>Experience</h2>
+            <p class="section-intro">
+    I am gaining practical experience by building responsive websites
+    and improving my frontend development skills.
+</p>
             <p>Internship at ABC Company as a Full Stack Web Developer, where I worked on developing and maintaining web applications.</p>
         </section>
     </main>
@@ -83,6 +125,43 @@
     <footer>
         <p>&copy; 2026 Amna Razzaq. All rights reserved.</p>
     </footer>
+<script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.getElementById("main-nav");
 
+        function openMenu() {
+            nav.classList.add("open");
+            toggle.classList.add("open");
+            toggle.setAttribute("aria-expanded", "true");
+            document.body.classList.add("menu-open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMenu() {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+            document.body.style.overflow = "";
+        }
+
+        toggle.addEventListener("click", () => {
+            if (nav.classList.contains("open")) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        nav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && nav.classList.contains("open")) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>

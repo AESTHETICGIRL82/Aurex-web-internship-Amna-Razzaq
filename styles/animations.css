@@ -1,0 +1,161 @@
+/* Page-load animation */
+
+section {
+  animation: fadeInUp 0.6s ease both;
+}
+
+section:nth-of-type(1) {
+  animation-delay: 0.05s;
+}
+
+section:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+section:nth-of-type(3) {
+  animation-delay: 0.15s;
+}
+
+section:nth-of-type(4) {
+  animation-delay: 0.2s;
+}
+
+section:nth-of-type(5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project card interaction */
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.14);
+}
+
+.project-icon {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon,
+.project-card:focus-within .project-icon {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid var(--primary-soft);
+  outline-offset: 4px;
+}
+
+/* Navigation interaction */
+
+nav a {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: #dcfce7;
+  color: #14532d;
+  transform: translateY(-2px);
+}
+
+/* Button press effect */
+
+button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.4s ease,
+    height 0.4s ease;
+}
+
+button:active::after {
+  width: 220px;
+  height: 220px;
+}
+
+/* Keyboard focus styles */
+
+nav a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-soft);
+  outline-offset: 3px;
+}
+.section-intro {
+  animation: textReveal 0.8s ease both;
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h2 {
+  position: relative;
+  transition: padding-left 0.3s ease;
+}
+
+section:hover h2 {
+  padding-left: 14px;
+}
+section:focus-visible {
+  outline: 3px solid var(--primary-soft);
+  outline-offset: 5px;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+}
+section:hover,
+section:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+}
