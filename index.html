@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship practice</title>
+
+    <meta
+        name="description"
+        content="Amna Razzaq's full-stack web development portfolio."
+    >
+
+    <title>Amna Razzaq | Portfolio</title>
+
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
 </head>
@@ -11,154 +19,305 @@
 <body>
     <header>
         <div class="header-left">
-            <img src="logo.jpg" alt="Amna Razzaq" class="profile-pic">
+            <img
+                class="profile-pic"
+                src="logo.jpg"
+                alt="Profile picture of Amna Razzaq"
+            >
+
             <h1>Amna Razzaq</h1>
         </div>
 
-        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- ✅ nav ab header ke ANDAR hai -->
-        <nav id="main-nav">
+        <nav id="main-nav" aria-label="Main navigation">
             <a href="#about">About Me</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
             <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <marquee direction="right">Welcome to my portfolio</marquee>
+   <p class="welcome-message" aria-label="Welcome to my portfolio">
+    <span>Welcome</span>
+    <span>to</span>
+    <span>my</span>
+    <span>portfolio</span>
+</p>
+
     <p class="subtitle">Full Stack Web Developer Intern</p>
 
     <main>
-        <section id="about" tabindex="0">
-            <h2>About Me</h2>
-            <p>I am a passionate Full Stack Web Developer with experience in building web applications using modern technologies. I enjoy solving complex problems and continuously learning new skills.</p>
+        <!-- About section -->
+        <section id="about" class="about-section" tabindex="0">
+            <div class="about-content">
+                <p class="section-label">About Me</p>
+
+                <h2>
+                    Building my journey as a
+                    <span>Full Stack Web Developer.</span>
+                </h2>
+
+                <p>
+                    I am a passionate Full Stack Web Developer with experience
+                    in building web applications using modern technologies. I
+                    enjoy solving complex problems and continuously learning
+                    new skills.
+                </p>
+
+                <a class="about-button" href="#projects">
+                    View My Projects
+                </a>
+            </div>
+
+            <div class="about-image">
+                <img
+                    src="logo.jpg"
+                    alt="Amna Razzaq profile picture"
+                >
+            </div>
         </section>
 
+        <!-- Skills section -->
         <section id="skills" tabindex="0">
             <h2>Skills</h2>
+
             <p class="section-intro">
-    These are the technologies I am currently practicing and improving.
-</p>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React.js, Node.js</li>
-                <li>Express.js, MongoDB</li>
-                <li>RESTful APIs</li>
-                <li>Version Control (Git)</li>
+                These are the technologies I am currently practicing
+                and improving.
+            </p>
+
+            <ul class="skills-list">
+                <li>
+                    <strong>Frontend</strong>
+                    <span>HTML, CSS, JavaScript, React.js</span>
+                </li>
+
+                <li>
+                    <strong>Backend</strong>
+                    <span>Node.js, Express.js, RESTful APIs</span>
+                </li>
+
+                <li>
+                    <strong>Database</strong>
+                    <span>MongoDB and data management</span>
+                </li>
+
+                <li>
+                    <strong>Tools</strong>
+                    <span>Git, GitHub, and version control</span>
+                </li>
             </ul>
         </section>
 
-          <section id="projects" tabindex="0">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-        <article class="project-card" tabindex="0">
-            <div class="project-icon">🌐</div>
-            <h3>Portfolio Website</h3>
-            <p>A responsive personal portfolio built with HTML5, CSS3 (Flexbox & Grid), showcasing skills and experience.</p>
-        </article>
-        <article class="project-card" tabindex="0">
-            <div class="project-icon">🛒</div>
-            <h3>E-Commerce UI</h3>
-            <p>A modern e-commerce landing page concept with product cards, responsive layout, and clean UI.</p>
-        </article>
-        <article class="project-card" tabindex="0">
-            <div class="project-icon">📋</div>
-            <h3>Task Manager App</h3>
-            <p>A simple task management tool built using React.js and Node.js with full CRUD functionality.</p>
-        </article>
-        <article class="project-card" tabindex="0">
-            <div class="project-icon">🌤️</div>
-            <h3>Weather Dashboard</h3>
-            <p>A weather forecast dashboard consuming a public REST API, built with vanilla JavaScript.</p>
-        </article>
-    </div>
-</section>
-        <section id="education" tabindex="0">
-            <h2>Education</h2>
-            <p>Bachelor's Degree in Computer Science from XYZ University.</p>
-            <p class="section-intro">
-    My studies help me build a strong foundation in programming,
-    problem-solving, and software development.
-</p>
+        <!-- Projects section -->
+        <section id="projects" tabindex="0">
+            <h2>Projects</h2>
+
+            <div class="projects-grid">
+                <article class="project-card" tabindex="0">
+                    <div class="project-icon" aria-hidden="true">🌐</div>
+
+                    <h3>Portfolio Website</h3>
+
+                    <p>
+                        A responsive personal portfolio built with HTML5
+                        and CSS3 using Flexbox and Grid.
+                    </p>
+                </article>
+
+                <article class="project-card" tabindex="0">
+                    <div class="project-icon" aria-hidden="true">🛒</div>
+
+                    <h3>E-Commerce UI</h3>
+
+                    <p>
+                        A modern e-commerce landing page concept with
+                        product cards and a responsive layout.
+                    </p>
+                </article>
+
+                <article class="project-card" tabindex="0">
+                    <div class="project-icon" aria-hidden="true">📋</div>
+
+                    <h3>Task Manager App</h3>
+
+                    <p>
+                        A task management tool built with React.js and
+                        Node.js with CRUD functionality.
+                    </p>
+                </article>
+
+                <article class="project-card" tabindex="0">
+                    <div class="project-icon" aria-hidden="true">🌤️</div>
+
+                    <h3>Weather Dashboard</h3>
+
+                    <p>
+                        A weather dashboard using JavaScript and a public
+                        REST API to display forecast information.
+                    </p>
+                </article>
+            </div>
         </section>
 
-        <section id="contact" tabindex="0">
-            <h2>Contact</h2>
-            <p class="section-intro">
-    Have a project idea or a question? Send me a message and I will be
-    happy to connect.
-</p>
+        <!-- Education and experience -->
+        <div class="journey-grid">
+            <section id="education" tabindex="0">
+                <h2>Education</h2>
+
+                <div class="journey-item">
+                    <span class="journey-label">Education</span>
+
+                    <div>
+                        <h3>Bachelor's Degree in Computer Science</h3>
+                        <p>XYZ University</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" tabindex="0">
+                <h2>Experience</h2>
+
+                <div class="journey-item">
+                    <span class="journey-label">Internship</span>
+
+                    <div>
+                        <h3>Full Stack Web Developer Intern</h3>
+
+                        <p>
+                            Worked on developing and maintaining web
+                            applications using modern technologies.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact section -->
+        <section id="contact" class="contact-section" tabindex="0">
+            <div class="contact-intro">
+                <p class="section-label">Get in touch</p>
+
+                <h2>Let's work together.</h2>
+
+                <p>
+                    Have a project idea, question, or learning opportunity?
+                    Send me a message and I will be happy to connect.
+                </p>
+            </div>
+
             <form>
                 <fieldset>
                     <legend>Contact Form</legend>
-                    <label for="name">Name:</label>
-                    <input type="text" placeholder="Enter your name" id="name" name="name">
 
-                    <label for="email">Email:</label>
-                    <input type="email" placeholder="Enter your email" id="email" name="email">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
 
-                    <label for="message">Message:</label>
-                    <textarea placeholder="Enter your message" id="message" name="message"></textarea>
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        required
+                    ></textarea>
 
                     <button type="submit">Send Message</button>
                 </fieldset>
             </form>
         </section>
-
-       <section id="experience" tabindex="0">
-  <h2>Experience</h2>
-  <p>
-    Internship at ABC Company as a Full Stack Web Developer, where I worked on
-    developing and maintaining web applications.
-  </p>
-</section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Amna Razzaq. All rights reserved.</p>
     </footer>
-<script>
-        const toggle = document.querySelector(".menu-toggle");
-        const nav = document.getElementById("main-nav");
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector("#main-nav");
 
         function openMenu() {
-            nav.classList.add("open");
-            toggle.classList.add("open");
-            toggle.setAttribute("aria-expanded", "true");
+            navigation.classList.add("open");
+            menuButton.classList.add("open");
+
+            menuButton.setAttribute("aria-expanded", "true");
+            menuButton.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
             document.body.classList.add("menu-open");
             document.body.style.overflow = "hidden";
         }
 
         function closeMenu() {
-            nav.classList.remove("open");
-            toggle.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
+            navigation.classList.remove("open");
+            menuButton.classList.remove("open");
+
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
             document.body.classList.remove("menu-open");
             document.body.style.overflow = "";
         }
 
-        toggle.addEventListener("click", () => {
-            if (nav.classList.contains("open")) {
+        menuButton.addEventListener("click", () => {
+            const isMenuOpen = navigation.classList.contains("open");
+
+            if (isMenuOpen) {
                 closeMenu();
             } else {
                 openMenu();
             }
         });
 
-        nav.querySelectorAll("a").forEach(link => {
+        navigation.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", closeMenu);
         });
 
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && nav.classList.contains("open")) {
+        document.addEventListener("keydown", (event) => {
+            if (
+                event.key === "Escape" &&
+                navigation.classList.contains("open")
+            ) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) {
                 closeMenu();
             }
         });
