@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A responsive task management application built with HTML, CSS, and JavaScript."
+  >
+  <title>TaskFlow | Task Manager</title>
+
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div>
+        <p class="eyebrow">AUREX Internship · Week 4</p>
+        <h1>TaskFlow</h1>
+      </div>
+
+      <p class="header-note">Stay focused. Get things done.</p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="intro-section" aria-labelledby="intro-title">
+      <p class="eyebrow">Simple task management</p>
+      <h2 id="intro-title">Organize your day with clarity.</h2>
+      <p>
+        Add your tasks, track your progress, and keep everything saved in your
+        browser.
+      </p>
+    </section>
+
+    <section class="task-form-section" aria-labelledby="form-title">
+      <h2 id="form-title">Add a new task</h2>
+
+      <form id="task-form" novalidate>
+        <div class="form-group">
+          <label for="task-input">Task title</label>
+          <input
+            type="text"
+            id="task-input"
+            name="task"
+            placeholder="e.g. Complete JavaScript practice"
+            maxlength="100"
+            autocomplete="off"
+            required
+          >
+          <p id="form-message" class="form-message" role="alert"></p>
+        </div>
+
+        <button type="submit" class="primary-button">
+          Add task
+        </button>
+      </form>
+    </section>
+
+    <section class="task-section" aria-labelledby="tasks-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your workspace</p>
+          <h2 id="tasks-title">My tasks</h2>
+        </div>
+
+        <button
+          type="button"
+          id="clear-completed"
+          class="secondary-button"
+        >
+          Clear completed
+        </button>
+      </div>
+
+      <div class="task-summary" aria-live="polite">
+        <div class="summary-card">
+          <span id="total-count">0</span>
+          <small>Total</small>
+        </div>
+
+        <div class="summary-card">
+          <span id="active-count">0</span>
+          <small>Active</small>
+        </div>
+
+        <div class="summary-card">
+          <span id="completed-count">0</span>
+          <small>Completed</small>
+        </div>
+      </div>
+
+      <div class="filter-group" aria-label="Task filters">
+        <button
+          type="button"
+          class="filter-button active"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+
+        <button
+          type="button"
+          class="filter-button"
+          data-filter="active"
+          aria-pressed="false"
+        >
+          Active
+        </button>
+
+        <button
+          type="button"
+          class="filter-button"
+          data-filter="completed"
+          aria-pressed="false"
+        >
+          Completed
+        </button>
+      </div>
+
+      <div
+        id="empty-state"
+        class="empty-state"
+        aria-live="polite"
+      >
+        <p class="empty-icon" aria-hidden="true">✓</p>
+        <h3>No tasks yet</h3>
+        <p>Add your first task to get started.</p>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      &copy; <span id="current-year"></span> Amna Razzaq · Built with
+      HTML, CSS, and Vanilla JavaScript
+    </p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
