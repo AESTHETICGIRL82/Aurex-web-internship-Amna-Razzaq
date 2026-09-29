@@ -47,13 +47,37 @@
 
 ---
 
+## Week 4 — JavaScript Fundamentals, DOM Manipulation, and localStorage
+
+| Section | Details |
+| --- | --- |
+| **Task** | Built TaskFlow, a task management application using HTML5, CSS3, and vanilla JavaScript, then linked it from the main portfolio's Projects section. |
+| **Live Deployment** | [View the live portfolio](https://aestheticgirl82.github.io/Aurex-web-internship-Amna-Razzaq/) · [Open TaskFlow directly](https://aestheticgirl82.github.io/Aurex-web-internship-Amna-Razzaq/week%204%20task-manager/) |
+| **Technologies Used** | HTML5, CSS3, JavaScript (DOM, Events, localStorage), Git, GitHub, GitHub Pages |
+| **Features Implemented** | Adding tasks through a controlled form, editing a task inline, deleting tasks, marking tasks as complete, filtering by All/Active/Completed, clearing completed tasks, live task counters, and an empty-state message when no tasks match the current filter. |
+| **JavaScript Concepts Practiced** | Variables (`let`, `const`), conditionals, loops and array methods, functions, arrays and objects (each task modeled as an object inside a tasks array), DOM selection and manipulation, event listeners (`click`, `submit`), and form validation to prevent empty tasks. |
+| **localStorage** | Tasks are saved using `JSON.stringify()` on every change and restored using `JSON.parse()` when the page loads, so the task list persists across page refreshes. |
+| **Responsive Testing** | Tested on a real mobile device as well as tablet and desktop widths. The task list, filters, and form all adapt cleanly with no horizontal scrolling. |
+| **Key Learnings** | Learned how to model application data as an array of objects and keep the interface in sync by re-rendering from that single source of truth. Also learned how localStorage and JSON serialization allow data to persist in the browser without a backend. |
+| **Challenges** | Implementing inline editing without losing a task's completed state took some adjustment. Keeping the counters and filtered view accurate after every add, edit, or delete required consolidating updates into a single render function instead of updating the DOM in multiple places. |
+
+---
+
 ## Project Structure
 
 ```text
 aurex-web-internship-Amna-Razzaq/
 ├── index.html
+├── script.js
 ├── styles/
 │   ├── main.css
 │   └── animations.css
+├── week 4 task-manager/
+│   ├── index.html
+│   ├── scripts/
+│   │   └── main.js
+│   └── styles/
+│       └── main.css
 ├── logo.jpg
 └── README.md
+```
