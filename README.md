@@ -80,9 +80,10 @@ This repository contains my progress throughout the AUREX Full-Stack Engineering
 | Section | Details |
 | --- | --- |
 | **Task** | Rebuilt the task management application as a component-based React application using Vite. |
-| **Live Deployment** | To be added after deployment |
+| **Live Deployment** | [Open the React Task Manager](https://aurex-web-internship-amna-razzaq.vercel.app) |
+| **Portfolio Link** | [View the Main Portfolio](https://aestheticgirl82.github.io/Aurex-web-internship-Amna-Razzaq/) |
 | **Project Location** | `week-1-react-task-manager/` |
-| **Technologies Used** | React, Vite, JavaScript, JSX, CSS, Git, GitHub |
+| **Technologies Used** | React, Vite, JavaScript, JSX, CSS, Git, GitHub, Vercel |
 | **Component Architecture** | Organized the application into reusable `Header`, `TaskForm`, `TaskList`, and `TaskItem` components. |
 | **React Concepts Practiced** | JSX, functional components, props, parent-to-child data flow, callback functions, `useState`, `useEffect`, controlled inputs, event handling, list rendering with `key` props, conditional rendering, and `useMemo`. |
 | **Features Implemented** | Add tasks, validate empty input, display tasks dynamically, mark tasks as complete, delete tasks, edit tasks inline, save or cancel edits, filter tasks, clear completed tasks, display summary counters, and persist tasks with `localStorage`. |
@@ -98,10 +99,16 @@ This repository contains my progress throughout the AUREX Full-Stack Engineering
 cd week-1-react-task-manager
 npm install
 npm run dev
+```
 
-**Repository Structure**
-Aurex-web-internship-Amna-Razzaq/
+---
+
+## Project Structure
+
+```text
+aurex-web-internship-Amna-Razzaq/
 ├── index.html
+├── script.js
 ├── styles/
 │   ├── main.css
 │   └── animations.css
@@ -113,18 +120,15 @@ Aurex-web-internship-Amna-Razzaq/
 │   └── styles/
 │       └── main.css
 ├── week-1-react-task-manager/
-│   ├── public/
 │   ├── src/
+│   │   ├── App.jsx
 │   │   ├── components/
 │   │   │   ├── Header.jsx
 │   │   │   ├── TaskForm.jsx
-│   │   │   ├── TaskItem.jsx
-│   │   │   └── TaskList.jsx
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── index.css
+│   │   │   ├── TaskList.jsx
+│   │   │   └── TaskItem.jsx
 │   │   └── main.jsx
 │   ├── package.json
-│   ├── package-lock.json
 │   └── vite.config.js
 └── README.md
+```
